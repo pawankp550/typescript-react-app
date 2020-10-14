@@ -18,13 +18,11 @@ function Favourites() {
 
     return (
         <React.Fragment>
-        <div className="title">Rick and Mort episodes</div>
-        <div className="favs"> Favourite(s): {favourites.length} </div>
         {
             episodes.length === 0 ? <Loader/> : (
             <section className="app-section">
             <Suspense fallback={<Loader/>}>
-                <Episodelist favourites={favourites} episodes={episodes} toggleFavourite={(episode: IEpisode) => toggleFavouriteAction(dispatch, episode, state)}/>
+                <Episodelist favourites={favourites} episodes={favourites} toggleFavourite={(episode: IEpisode) => toggleFavouriteAction(dispatch, episode, state)}/>
             </Suspense>
             </section>
             )

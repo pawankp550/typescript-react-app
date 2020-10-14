@@ -28,20 +28,35 @@ code {
     monospace;
 }
 
-.title, .favs {
+.title, .favs, .nav-links a  {
   text-align: center;
   color:  $colorMain;
   font-size: 4em;
   font-weight: bold;
   font-family: sans-serif;
   text-transform: uppercase;
-  text-shadow: 5px 5px 11px #bcc0c6, -5px -5px 11px #ffffff;
+  text-shadow: 5px 5px 10px #bcc0c6, -5px -5px 8px #ffffff;
   position: relative;
+
+  @media(max-width: 480px) {
+    font-size: 3rem;
+  }
 }
 
-.favs  {
+.favs {
   font-size: 2em;
   text-shadow: 3px 3px 8px #a0a3a8, -3px -3px 5px #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    text-shadow: 2px 2px 3px #a0a3a8, -2px -2px 3px #ffffff;
+  }
 }
 
 .container {
@@ -108,6 +123,7 @@ code {
     }
 
     &-button-fav {
+      cursor: pointer;
       font-family: $font;
       border-radius: 10px;
       font-weight: 600;
